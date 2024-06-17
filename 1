@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Введіть кількість елементів у масиві: ");
+    scanf("%d", &n);
+
+    int a[n], positive_count = 0, negative_count = 0;
+
+    printf("Введіть елементи масиву:\n");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+        if(a[i] > 0) positive_count++;
+        if(a[i] < 0) negative_count++;
+    }
+
+    printf("Кількість додатних елементів: %d\n", positive_count);
+    printf("Кількість від'ємних елементів: %d\n", negative_count);
+
+    if(negative_count <= positive_count) {
+        printf("1\n");
+    } else {
+        printf("0\n");
+
+    
+    }
+
+    printf("Індекси нульових елементів: ");
+    for(int i = 0; i < n; i++) {
+        if(a[i] == 0) printf("%d ", i + 1);
+    }
+
+    return 0;
+}
